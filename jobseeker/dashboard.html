@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Job Seeker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <!-- Role protection -->
+  <script src="../assets/auth-guard.js"></script>
+  <script>
+    requireRole("JOBSEEKER");
+  </script>
+
+  <!-- Dashboard Logic -->
+  <script defer src="../assets/jobseeker-dashboard.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+    <nav class="top-nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="profile.html">Profile</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <img src="../assets/user.png" class="user-avatar">
+      <span id="dashboardUserName"></span>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-link active">Dashboard</a>
+    <a href="jobs.html" class="sidebar-link">Jobs</a>
+    <a href="profile.html" class="sidebar-link">Profile</a>
+  </aside>
+
+  <main class="dashboard-content">
+
+    <!-- Welcome -->
+    <section class="welcome-banner">
+      <h1>
+        Welcome, <span id="welcomeName"></span> 👋
+      </h1>
+      <p>
+        Here are jobs recommended for you based on your skills and profile.
+      </p>
+    </section>
+
+    <!-- Skill Score -->
+    <section class="skill-score-card">
+      <div class="score-circle" id="dashboardSkillScore"></div>
+
+      <div>
+        <h3>Skill Score</h3>
+        <p><strong id="skillScoreText"></strong>/100</p>
+        <p>
+          Experience Level:
+          <strong id="experienceLevel"></strong>
+        </p>
+        <p class="score-tip">
+          💡 Score is calculated using skill strength & consistency
+        </p>
+      </div>
+    </section>
+
+    <div class="dashboard-grid">
+
+      <!-- Recommended Jobs -->
+      <section class="recommended-jobs">
+        <h2>💡 Recommended Jobs</h2>
+        <div id="recommendedJobs">
+          <!-- Job cards injected by JS -->
+        </div>
+      </section>
+
+      <!-- Applications -->
+      <section class="applications">
+        <h2>My Applications</h2>
+        <div id="applicationList">
+          <!-- Applications injected by JS -->
+        </div>
+        <a href="jobs.html" class="view-all">
+          View All Applications
+        </a>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>

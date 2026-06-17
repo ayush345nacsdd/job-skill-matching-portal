@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Matching Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Single CSS file -->
+  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- Single JS file (logic added later) -->
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo" id="homeLogo">
+        <span class="logo-icon">A</span>
+        <span class="logo-text">Job Matching Portal</span>
+      </div>
+    </div>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link active" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About</a>
+      <a href="#features" class="nav-link" data-page="features">Features</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="login.html" class="btn-outline" id="navLoginBtn">Login</a>
+      <a href="register.html" class="btn-primary" id="navRegisterBtn">Register</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 id="heroHeading" style="color: white;">Find Your Perfect Job or Candidate</h1>
+
+      <h3 class="hero-subtitle" align="center">
+        Skill-Based Job Matching Portal for Job Seekers and Recruiters.
+      </h3>
+
+      <div class="hero-buttons">
+        <a href="login.html" class="btn-primary" data-action="login">Login</a>
+        <a href="register.html" class="btn-outline" data-action="register">Register</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROLE CARDS ===== -->
+  <section class="role-section">
+    <div class="role-card" data-role="jobseeker">
+      <h2>For Job Seekers</h2>
+      <p>Discover jobs that match your skills.</p>
+
+      <ul>
+        <li>Personalized job recommendations</li>
+        <li>Transparent match explanation for every job</li>
+      </ul>
+    </div>
+
+    <div class="role-card" data-role="recruiter">
+      <h2>For Recruiters</h2>
+      <p>Find qualified candidates that fit your requirements.</p>
+
+      <ul>
+        <li>Targeted candidate search</li>
+        <li>Efficient hiring process</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="features" id="features">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="features-grid">
+      <div class="feature-box" data-feature="skill-score">
+        <h3>Skill Score System</h3>
+        <p>Numeric score showing job readiness</p>
+      </div>
+
+      <div class="feature-box" data-feature="explainable-ai">
+        <h3>Explainable AI Matching</h3>
+        <p>See why a job matches your skills</p>
+      </div>
+
+      <div class="feature-box" data-feature="skill-gap">
+        <h3>Skill Gap Analyzer</h3>
+        <p>Know missing skills before applying</p>
+      </div>
+
+      <div class="feature-box" data-feature="smart-apply">
+        <h3>Smart Apply Protection</h3>
+        <p>Prevents low-match spam applications</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta">
+    <h3>Join Now and Start Matching the Best Jobs with the Best Candidates.</h3>
+
+    
+  </section>
+
+</body>
+</html>

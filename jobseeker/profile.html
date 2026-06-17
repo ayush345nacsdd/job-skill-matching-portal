@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile | Job Seeker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <!-- Auth Guard -->
+  <script src="../assets/auth-guard.js"></script>
+
+  <!-- Profile Logic -->
+  <script defer src="../assets/jobseeker-profile.js"></script>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+    <nav class="top-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <span id="profileUserName"></span>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+    <a href="jobs.html" class="sidebar-link">Jobs</a>
+    <a href="profile.html" class="sidebar-link active">Profile</a>
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="dashboard-content">
+
+    <h1 class="page-title">Profile</h1>
+
+    <!-- ================= PROFILE HEADER ================= -->
+    <section class="profile-header">
+      <div class="profile-info">
+        <div class="profile-avatar">👤</div>
+        <div>
+          <h2 id="fullName"></h2>
+          <p id="email"></p>
+          <p id="location"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILL SCORE ================= -->
+    <section class="skill-score-card">
+      <div class="score-circle" id="profileSkillScore">0</div>
+      <div>
+        <h3>Skill Score</h3>
+        <p><strong>0</strong>/100</p>
+        <p>
+          Experience Level:
+          <span id="experienceLevel" class="badge beginner">Beginner</span>
+        </p>
+        <p class="tip">
+          💡 Calculated from skills, experience & resume
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PROFILE FORM ================= -->
+    <section class="profile-form">
+      <label>Full Name</label>
+      <input type="text" id="editName">
+
+      <label>Email Address</label>
+      <input type="email" id="editEmail" disabled>
+
+      <label>Location</label>
+      <input type="text" id="editLocation">
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="profile-card">
+      <h2>Experience</h2>
+
+      <label for="experienceYears">Total Experience</label>
+      <select id="experienceYears">
+        <option value="0">Fresher</option>
+        <option value="1">1 Year</option>
+        <option value="2">2 Years</option>
+        <option value="3">3+ Years</option>
+      </select>
+
+      <p class="tip">
+        💡 Experience directly improves your Skill Score
+      </p>
+    </section>
+
+    <!-- ================= RESUME ================= -->
+    <section class="documents-section">
+      <h2>Resume</h2>
+
+      <input
+        type="file"
+        id="resumeUpload"
+        accept=".pdf,.doc,.docx"
+      >
+
+      <div id="resumeDisplay" class="document-display">
+        <!-- Resume injected by JS -->
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="skills-section" data-feature="skills">
+      <div class="skills-header">
+        <h2>Skills</h2>
+        <button class="btn-outline" data-action="add-skill">
+          + Add Skill
+        </button>
+      </div>
+      <!-- Skills injected by JS -->
+    </section>
+
+    <!-- ================= SKILL GAP ================= -->
+    <section class="skill-gap" data-feature="skill-gap">
+      <h2>Skill Gap Analysis</h2>
+      <div class="gap-warning">
+        ⚠️ Missing Skills: <strong></strong>
+      </div>
+    </section>
+
+    <!-- ================= UPDATE ================= -->
+    <div class="update-section">
+      <button class="btn-primary" id="updateProfileBtn">
+        Update Profile
+      </button>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>

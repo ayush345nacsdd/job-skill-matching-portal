@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recruiter Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <!-- Role Protection -->
+  <script src="../assets/auth-guard.js"></script>
+  <script>
+    requireRole("RECRUITER");
+  </script>
+
+  <!-- Dashboard Logic -->
+  <script defer src="../assets/recruiter-dashboard.js"></script>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <div class="avatar-circle" id="recruiterAvatar">R</div>
+      <div>
+        <div class="user-name" id="recruiterName"></div>
+        <div class="user-role">Recruiter</div>
+      </div>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <button class="btn-outline" id="logoutBtn">
+      Logout
+    </button>
+  </div>
+</header>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="dashboard-layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-link active">Dashboard</a>
+    <a href="post-job.html" class="sidebar-link">Post Job</a>
+    <a href="profile.html" class="sidebar-link">Profile</a>
+
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="dashboard-content">
+
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header">
+      <h1>Recruiter Dashboard</h1>
+      <p>
+        Welcome,
+        <strong id="welcomeRecruiterName"></strong>!
+        Here’s an overview of your posted jobs.
+      </p>
+
+      <button class="btn-primary" id="postJobBtn">
+        ➕ Post New Job
+      </button>
+    </section>
+
+    <!-- ================= FEATURE BANNER ================= -->
+    <section class="feature-banner">
+      ✨ <strong>NEW:</strong>
+      Recruiter Auto-Ranking, Shortlisting & Hiring Decisions
+    </section>
+
+    <!-- ================= JOB LIST ================= -->
+    <section class="job-table" id="recruiterJobTable">
+      <!--
+        Job cards will be injected dynamically by recruiter-dashboard.js
+
+        Expected structure per job:
+
+        <div class="job-card">
+
+          <div class="job-row">
+            <div class="job-main"></div>
+            <div class="job-meta"></div>
+            <div class="job-score"></div>
+            <div class="job-actions"></div>
+          </div>
+
+          <div class="job-ranking hidden">
+            <h3 class="ranking-title"></h3>
+            <div class="ranked-candidates-list"></div>
+            <button class="btn-outline close-ranking-btn">Close</button>
+          </div>
+
+        </div>
+      -->
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Job Matching Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">Job Matching Portal</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <a href="login.html" class="btn-outline">Login</a>
+        <a href="register.html" class="btn-primary">Register</a>
+    </div>
+</nav>
+
+<!-- ================= REGISTER FORM ================= -->
+<section class="auth-section">
+    <div class="auth-card">
+
+        <!-- JS will update role text -->
+        <h2 id="registerRoleTitle">Create Account</h2>
+        <p class="auth-subtitle">
+            Please fill in the details to create your account.
+        </p>
+
+        <form id="registerForm" autocomplete="off">
+
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                     autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                     autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <!-- JS will handle submit later -->
+            <button type="submit" id="registerSubmitBtn" class="auth-btn">
+                Register
+            </button>
+        </form>
+
+        <p class="auth-footer">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+    </div>
+</section>
+
+<!-- JS will be attached later -->
+<script src="assets/register.js"></script>
+</body>
+</html>

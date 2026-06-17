@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <!-- Role protection -->
+  <script src="../assets/auth-guard.js"></script>
+  <script>
+    requireRole("ADMIN");
+  </script>
+
+  <!-- Admin Dashboard Logic -->
+  <script defer src="../assets/admin-dashboard.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <span class="user-name">Admin</span>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-link active">Dashboard</a>
+  </aside>
+
+  <main class="dashboard-content">
+
+    <h1 class="page-title">Admin Dashboard</h1>
+
+    <!-- ================= STATS ================= -->
+    <section class="admin-stats">
+      <div class="stat-card">
+        <h2 id="totalUsers">0</h2>
+        <p>Total Users</p>
+      </div>
+
+      <div class="stat-card">
+        <h2 id="totalJobs">0</h2>
+        <p>Total Jobs</p>
+      </div>
+
+      <div class="stat-card">
+        <h2 id="totalApplications">0</h2>
+        <p>Total Applications</p>
+      </div>
+    </section>
+
+    <!-- ================= GRAPHS ================= -->
+    <section class="admin-graphs">
+
+      <div class="graph-card">
+        <h3>User Account Distribution</h3>
+
+        <div class="bar-group">
+          <div class="bar-item">
+            <span>Job Seekers</span>
+            <div class="bar">
+              <div class="bar-fill blue" id="jobSeekerBar">0</div>
+            </div>
+          </div>
+
+          <div class="bar-item">
+            <span>Recruiters</span>
+            <div class="bar">
+              <div class="bar-fill green" id="recruiterBar">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-card">
+        <h3>Jobs Posted vs Applications</h3>
+
+        <div class="bar-group">
+          <div class="bar-item">
+            <span>Jobs Posted</span>
+            <div class="bar">
+              <div class="bar-fill blue" id="jobsBar">0</div>
+            </div>
+          </div>
+
+          <div class="bar-item">
+            <span>Applications</span>
+            <div class="bar">
+              <div class="bar-fill green" id="applicationsBar">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= TABLES ================= -->
+    <section class="admin-tables">
+
+      <div class="table-card">
+        <h3>User Management</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-card">
+        <h3>Job Management</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Job Title</th>
+              <th>Posted By</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="jobTableBody"></tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>

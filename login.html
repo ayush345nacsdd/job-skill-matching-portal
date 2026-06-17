@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Job Matching Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">Job Matching Portal</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <a href="login.html" class="btn-outline">Login</a>
+        <a href="register.html" class="btn-primary">Register</a>
+    </div>
+</nav>
+
+<!-- ================= PAGE HEADER ================= -->
+<section class="page-header">
+    <h1>Choose Your Role</h1>
+    <p>Please select a role to continue.</p>
+</section>
+
+<!-- ================= ROLE SELECTION ================= -->
+<section class="role-selection">
+
+    <!-- Job Seeker -->
+    <div class="role-card" data-role="JOBSEEKER">
+        <div class="role-icon">👤</div>
+        <h2>Job Seeker</h2>
+        <p>Find and apply for jobs that match your skills.</p>
+        <button class="role-btn" onclick="setLoginRole('JOBSEEKER')">
+    Continue
+</button>
+    </div>
+
+    <!-- Recruiter -->
+    <div class="role-card" data-role="RECRUITER">
+        <div class="role-icon">💼</div>
+        <h2>Recruiter</h2>
+        <p>Post jobs and find skilled candidates.</p>
+        <button class="role-btn" onclick="setLoginRole('RECRUITER')">
+    Continue
+</button>
+    </div>
+
+    <!-- Admin -->
+    <div class="role-card" data-role="ADMIN">
+        <div class="role-icon">🛡️</div>
+        <h2>Admin</h2>
+        <p>Access admin tools and manage the system.</p>
+       <button class="role-btn" onclick="setLoginRole('ADMIN')">
+    Continue
+</button>
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>New to the platform? <a href="register.html">Register here</a></p>
+    <p>© 2024 Job Matching Portal</p>
+</footer>
+
+<!-- JS (will be attached later) -->
+<script src="assets/login.js"></script>
+
+
+</body>
+</html>

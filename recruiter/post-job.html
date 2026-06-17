@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Job | Recruiter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <!-- Role protection -->
+  <script src="../assets/auth-guard.js"></script>
+  <script>
+    requireRole("RECRUITER");
+  </script>
+
+  <!-- Post Job Logic -->
+  <script defer src="../assets/recruiter-post-job.js"></script>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <div class="avatar-circle" id="recruiterAvatar">R</div>
+      <div>
+        <div class="user-name" id="recruiterName"></div>
+        <div class="user-role">Recruiter</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= LAYOUT ================= -->
+<div class="dashboard-layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+    <a href="post-job.html" class="sidebar-link active">Post Job</a>
+    <a href="profile.html" class="sidebar-link">Profile</a>
+
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="dashboard-content">
+
+    <h1 class="page-title">Post Job</h1>
+
+    <!-- ================= JOB FORM ================= -->
+    <section class="post-job-card">
+
+      <form id="postJobForm">
+
+        <!-- Job Title -->
+        <label>Job Title</label>
+        <input
+          type="text"
+          id="jobTitle"
+          placeholder="Eg. Frontend Developer"
+          required
+        >
+
+        <!-- Description -->
+        <label>Description</label>
+        <textarea
+          id="jobDescription"
+          placeholder="Enter job description here..."
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Required Skills -->
+        <label>Required Skills</label>
+
+        <div class="skill-input-wrapper">
+          <input
+            type="text"
+            id="skillInput"
+            placeholder="Type a skill and press Add"
+          >
+          <button
+            type="button"
+            class="btn-outline"
+            id="addSkillBtn"
+          >
+            Add
+          </button>
+        </div>
+
+        <div
+          class="skill-input-group"
+          id="skillContainer"
+        >
+          <!-- Skill chips added by JS -->
+        </div>
+
+        <!-- Experience -->
+        <label>Experience</label>
+        <select id="experience">
+          <option>Fresher</option>
+          <option>1+ years</option>
+          <option selected>2+ years</option>
+          <option>5+ years</option>
+        </select>
+
+        <!-- Location -->
+        <label>Location</label>
+        <select id="location">
+          <option>New York, NY</option>
+          <option>Remote</option>
+          <option>San Francisco, CA</option>
+          <option>Hyderabad, India</option>
+        </select>
+
+        <p class="info-note">
+          ℹ️ Job requirements will be used for AI-based candidate ranking
+        </p>
+
+        <button type="submit" class="btn-primary">
+          Post Job
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>

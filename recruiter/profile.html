@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recruiter Profile | Job Matching Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <!-- Profile Logic (handles auth + readonly internally) -->
+  <script defer src="../assets/recruiter-profile.js"></script>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar recruiter-only">
+  <div class="topbar-left">
+    <span class="logo">Job Matching Portal</span>
+
+    <nav class="top-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="post-job.html">Post Job</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <span id="recruiterName"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= LAYOUT ================= -->
+<div class="dashboard-layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar recruiter-only">
+    <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+    <a href="post-job.html" class="sidebar-link">Post Job</a>
+    <a href="profile.html" class="sidebar-link active">Profile</a>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="dashboard-content">
+
+    <h1 class="page-title">Recruiter Profile</h1>
+
+    <!-- ================= BASIC INFO ================= -->
+    <section class="profile-card">
+      <h2>Recruiter Information</h2>
+
+      <label>Full Name</label>
+      <input type="text" id="recruiterFullName" />
+
+      <label>Official Email</label>
+      <input type="email" id="recruiterEmail" disabled />
+
+      <label>Your Role / Title</label>
+      <input
+        type="text"
+        id="recruiterTitle"
+        placeholder="HR Manager, Tech Lead, Founder"
+      />
+    </section>
+
+    <!-- ================= COMPANY INFO ================= -->
+    <section class="profile-card">
+      <h2>Company Information</h2>
+
+      <label>Company Name</label>
+      <input type="text" id="companyName" />
+
+      <label>Industry</label>
+      <input
+        type="text"
+        id="companyIndustry"
+        placeholder="IT, FinTech, Healthcare..."
+      />
+
+      <label>Company Size</label>
+      <select id="companySize">
+        <option value="">Select size</option>
+        <option value="1-10">1–10</option>
+        <option value="11-50">11–50</option>
+        <option value="51-200">51–200</option>
+        <option value="201-500">201–500</option>
+        <option value="500+">500+</option>
+      </select>
+
+      <label>Headquarters Location</label>
+      <input type="text" id="companyLocation" />
+
+      <label>Company Website</label>
+      <input
+        type="url"
+        id="companyWebsite"
+        placeholder="https://company.com"
+      />
+
+      <label>About Company</label>
+      <textarea
+        id="companyDescription"
+        rows="4"
+        placeholder="What does your company do? Mission, products, values..."
+      ></textarea>
+    </section>
+
+    <!-- ================= HIRING INFO ================= -->
+    <section class="profile-card">
+      <h2>Hiring & Work Details</h2>
+
+      <label>Hiring Teams / Departments</label>
+      <input
+        type="text"
+        id="hiringTeams"
+        placeholder="Backend, Frontend, Data, HR"
+      />
+
+      <label>Work Mode</label>
+      <select id="workMode">
+        <option value="">Select</option>
+        <option value="Onsite">Onsite</option>
+        <option value="Remote">Remote</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+
+      <label>Tech Stack (optional)</label>
+      <input
+        type="text"
+        id="techStack"
+        placeholder="Java, Spring Boot, React, SQL"
+      />
+
+      <label>Hiring Process</label>
+      <textarea
+        id="hiringProcess"
+        rows="3"
+        placeholder="Resume screening → Technical round → HR round"
+      ></textarea>
+    </section>
+
+    <!-- ================= UPDATE ================= -->
+    <div class="update-section recruiter-only">
+      <button class="btn-primary" id="saveRecruiterProfile">
+        Save Profile
+      </button>
+    </div>
+
+  </main>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2024 Job Matching Portal
+</footer>
+
+</body>
+</html>
